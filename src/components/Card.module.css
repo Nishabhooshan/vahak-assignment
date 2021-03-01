@@ -1,0 +1,57 @@
+.card{
+  border: 1px solid #0A22391F;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  
+}
+.cardHeader{
+  /* border: 1px solid red; */
+  background-color: #202942;
+  color: white;
+  padding: 15px;
+  border-radius: 5px 5px 0px 0px;
+}
+.cardBody > div {
+  margin-bottom: 10px;
+}
+.content{
+  display: flex;
+}
+.logo{
+  margin-right: 10px;
+  width: 25px;
+}
+.cardBody{
+  /* border: 1px solid red; */
+  padding: 10px 10px 10px 30px;
+  text-align: left;
+}
+.profile{
+  display: flex;
+  align-items: center;
+  margin-left: 23px;
+  padding: 10px;
+}
+.profile_image{
+  margin-right: 10px;
+}
+.profile_content{
+  /* border: 1px solid red; */
+  text-align: left;
+  margin-left: 10px;
+}
+.heading{
+  font-weight: 600;
+  font-size: 16px;
+}
+.subHeading{
+  color: #8492A6;
+  margin-top: 5px;
+}
+
+.paraStyle{
+  padding-left: 22px;
+   font-size: 14px ;
+    padding-right:22px; 
+    text-align: left;
+}

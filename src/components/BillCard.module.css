@@ -1,0 +1,36 @@
+.hr_line{
+  border: 2px solid blue;
+  width: 70px;
+  margin: auto;
+}
+
+.buttons > button{
+  border: 1px solid blue;
+  padding: 12px;
+  border-radius: 50px;
+  margin-right: 10px;
+  color: #3054D6;
+  background-color: #3054D60F;
+}
+.billCard{
+  padding: 10px;
+  border: 1px solid #0A22391F;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.mb{
+  margin-bottom: 40px;
+}
+
+.bid-now-btn {
+  display: inline-block;
+  width: 95%;
+  border-radius: 5px;
+  background-color: #3054d6;
+  color: white;
+  font-size: 16px;
+}
+.MuiFilledInput-input{
+  background: white !important;
+}
