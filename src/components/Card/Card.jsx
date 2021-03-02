@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import styles from "./Card.module.css";
-import Grouplogo from "./assests/Group 15945.svg";
-import Pathlogo from "./assests/Path 25988.svg";
-import Paymentlogo from "./assests/payment.svg";
-import Profilepic from "./assests/Profile.png";
-import MoreLogo from "./assests/More.svg";
+import Grouplogo from "../../assets/Group.svg"; 
+import Pathlogo from "../../assets/Path.svg";
+import Paymentlogo from "../../assets/payment.svg";
+import Profilepic from "../../assets/Profile.png";
+import MoreLogo from "../../assets/More.svg";
 const Card = () => {
   const [toggle, HandleToggle] = useState(false);
   console.log(toggle);
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
-        <h3 style={{ margin: "0px 0px 5px 0px" }}>Honda City</h3>
-        <p style={{ margin: "0px", color: "#8492A6" }}>
+        <h3>Honda City</h3>
+        <p>
           Posted At 1 Nov, 9:30 AM
         </p>
       </div>

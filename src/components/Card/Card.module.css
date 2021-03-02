@@ -1,57 +1,75 @@
-.card{
+.card {
   border: 1px solid #0A22391F;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
-  
+  margin: 15px;
+
 }
-.cardHeader{
-  /* border: 1px solid red; */
+
+.cardHeader {
   background-color: #202942;
   color: white;
   padding: 15px;
   border-radius: 5px 5px 0px 0px;
+  
 }
-.cardBody > div {
+.cardHeader h3 {
+  margin: 0px 0px 5px 0px;
+}
+
+.cardHeader p{
+  margin: 0px;
+ color: #8492A6;
+}
+.cardBody>div {
   margin-bottom: 10px;
 }
-.content{
+
+.content {
   display: flex;
 }
-.logo{
+
+.logo {
   margin-right: 10px;
   width: 25px;
 }
-.cardBody{
+
+.cardBody {
   /* border: 1px solid red; */
   padding: 10px 10px 10px 30px;
   text-align: left;
 }
-.profile{
+
+.profile {
   display: flex;
   align-items: center;
   margin-left: 23px;
   padding: 10px;
 }
-.profile_image{
+
+.profile_image {
   margin-right: 10px;
 }
-.profile_content{
+
+.profile_content {
   /* border: 1px solid red; */
   text-align: left;
   margin-left: 10px;
 }
-.heading{
+
+.heading {
   font-weight: 600;
   font-size: 16px;
 }
-.subHeading{
+
+.subHeading {
   color: #8492A6;
   margin-top: 5px;
 }
 
-.paraStyle{
+.paraStyle {
   padding-left: 22px;
-   font-size: 14px ;
-    padding-right:22px; 
-    text-align: left;
+  font-size: 14px;
+  padding-right: 22px;
+  text-align: left;
 }
