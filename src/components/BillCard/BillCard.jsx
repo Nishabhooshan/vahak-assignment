@@ -1,71 +1,76 @@
 import React, { useState } from "react";
 import styles from "./BillCard.module.css";
-import Rupeepic from "../../assets/rupeelogo.jpg"; 
+import TextField from "../../ui/TextField/TextField";
 
 const BillCard = () => {
-  const [amount, setAmount] = useState("");
   const [formHide, setFormHide] = useState(true);
-  const [phoneNumber, setPhone] = useState("");
+  const [amount, setAmount] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
   const [name, setName] = useState("");
   const [remark, setRemark] = useState("");
-  const enterAmounthandler = (event) => {
-    setAmount(event.target.value);
-  };
-  const fixedRateHandler = () => {
-    setFormHide(false);
+
+  const fixedRateHandler = () => setFormHide(false);
+
+  const onInputChange = (event) => {
+    const value = event.target.value;
+    event.target.name === "amount"
+      ? setAmount(value)
+      : event.target.name === "mobile"
+      ? setMobileNumber(value)
+      : setName(value);
   };
   return (
     <>
-    <div className={styles.billCard}>
-      <div className={styles.body}>
-        <h2 style={{ marginBottom: "10px" }}>Place your Load Bid</h2>
-        <div className={styles.hr_line}></div>
-      </div>
-      <div className={styles.amountDiv}> 
-            <img
-              style={{ width: "14px", height: "23px" }}
-              src={Rupeepic}
-              alt="logo"
-            />
-          
-          <input className={styles.amountInput}
-            required
-            id="standard-required"
-            placeholder="0"
+      <div className={styles.billCard}>
+        <div className={styles.body}>
+          <h2 style={{ marginBottom: "10px" }}>Place your Load Bid</h2>
+          <div className={styles.hr_line}></div>
+        </div>
+        <div className={styles.amountDiv}>
+          <TextField
+            placeHolder="0"
+            name="amount"
             type="number"
+            className={styles.amountInput}
             value={amount}
-            onChange={enterAmounthandler}
+            onInputChange={onInputChange}
           />
-     
-      </div>
-      <div className={styles.buttons}>
-        <button className={styles.billCardBtn}
-          disabled={amount === "" ? true : false}
-          onClick={fixedRateHandler}
-        >
-          Fixed Rate
-        </button>
-        <button className={styles.billCardBtn} disabled>Rate Negotiable</button>
+        </div>
+        <div>
+          <button
+            className={styles.billCardBtn}
+            disabled={amount === "" ? true : false}
+            onClick={fixedRateHandler}
+          >
+            Fixed Rate{" "}
+          </button>
+          <button className={styles.billCardBtn} disabled>
+            Rate Negotiable
+          </button>
+        </div>
         <form hidden={formHide}>
-          <div style={{  margin: "30px 0" }}>
+          <hr />
+          <div style={{ margin: "30px 0" }}>
             <div className={styles.floatingLabel}>
-              <input
-                className={styles.floatingInput}
+              <TextField
+                placeHolder=" "
+                name="mobile"
                 type="number"
-                placeholder=" "
-                value={phoneNumber}
-                onChange={ (e) => setPhone(e.target.value)}
+                className={styles.floatingInput}
+                value={mobileNumber}
+                onInputChange={onInputChange}
               />
               <span className={styles.highlight}></span>
               <label>Enter your mobile number</label>
             </div>
             <div className={styles.floatingLabel}>
-              <input
-                className={styles.floatingInput}
+              <TextField
+                placeHolder=" "
+                name="name"
                 type="text"
-                placeholder=" "
+                className={styles.floatingInput}
                 value={name}
-                onChange={ (e) => setName(e.target.value)}
+                onInputChange={onInputChange}
               />
               <span className={styles.highlight}></span>
               <label>Enter your Name</label>
@@ -77,20 +82,23 @@ const BillCard = () => {
                 placeholder=" "
                 rows="4"
                 value={remark}
-                onChange={ (e) => setRemark(e.target.value)}
-                
+                onChange={(e) => setRemark(e.target.value)}
               />
               <span className={styles.highlight}></span>
-              <label>Enter Remark</label>
+              <label>Enter Remark (Optional)</label>
             </div>
           </div>
-         
         </form>
-      
       </div>
-    </div>
-    
-      <button disabled={phoneNumber!=="" && name!=="" && remark!==""?false:true} className={styles.bidBtn}>Bid Now</button>
+
+      <button
+        disabled={
+          mobileNumber !== "" && name !== "" && remark !== "" ? false : true
+        }
+        className={styles.bidBtn}
+      >
+        Bid Now
+      </button>
     </>
   );
 };
