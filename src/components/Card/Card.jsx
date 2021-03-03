@@ -42,7 +42,7 @@ const Card = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <div>
-          <p style={{ color: "blue" }} onClick={() => HandleToggle(!toggle)}>
+          <p style={{ color: "blue" , cursor: "pointer"}} onClick={() => HandleToggle(!toggle)}>
             {toggle ? "Hide Details" : "More Details"}{" "}
             <span>
               <img src={MoreLogo} alt="logo" />

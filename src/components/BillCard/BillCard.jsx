@@ -5,8 +5,10 @@ import Rupeepic from "../../assets/rupeelogo.jpg";
 const BillCard = () => {
   const [amount, setAmount] = useState("");
   const [formHide, setFormHide] = useState(true);
+  const [phoneNumber, setPhone] = useState("");
+  const [name, setName] = useState("");
+  const [remark, setRemark] = useState("");
   const enterAmounthandler = (event) => {
-    console.log("enterAmounthandler", event.target.value);
     setAmount(event.target.value);
   };
   const fixedRateHandler = () => {
@@ -51,6 +53,8 @@ const BillCard = () => {
                 className={styles.floatingInput}
                 type="number"
                 placeholder=" "
+                value={phoneNumber}
+                onChange={ (e) => setPhone(e.target.value)}
               />
               <span className={styles.highlight}></span>
               <label>Enter your mobile number</label>
@@ -60,6 +64,8 @@ const BillCard = () => {
                 className={styles.floatingInput}
                 type="text"
                 placeholder=" "
+                value={name}
+                onChange={ (e) => setName(e.target.value)}
               />
               <span className={styles.highlight}></span>
               <label>Enter your Name</label>
@@ -70,6 +76,8 @@ const BillCard = () => {
                 type="text-area"
                 placeholder=" "
                 rows="4"
+                value={remark}
+                onChange={ (e) => setRemark(e.target.value)}
                 
               />
               <span className={styles.highlight}></span>
@@ -82,7 +90,7 @@ const BillCard = () => {
       </div>
     </div>
     
-      <button className={styles.bidBtn}>Bid Now</button>
+      <button disabled={phoneNumber!=="" && name!=="" && remark!==""?false:true} className={styles.bidBtn}>Bid Now</button>
     </>
   );
 };
